@@ -1,6 +1,24 @@
+import { useEffect, useState } from 'react';
 import './style.css';
 
 export default function Header() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('header');
+      if (window.scrollY >= 200) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <header className='header'>
       <a href="#" className="logo">
@@ -17,7 +35,6 @@ export default function Header() {
         <a href="#about">Sobre</a>
         <a href="#education">Educação</a>
         <a href="#skills">Habilidades</a>
-        <a href="#contact">Contato</a>
       </nav>
     </header>
   );

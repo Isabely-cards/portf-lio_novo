@@ -9,10 +9,11 @@
 }
 
 :root {
-  --bg-color: #081b29;
-  --second-bg-color: #112e42;
+  --bg-color: #200829;
+  --second-bg-color: #100414;
   --text-color: #ededed;
-  --main-color: #00abf0;
+  --main-color: #a400f0;
+  --hover: #a400f017;
 }
 
 html {
@@ -23,4 +24,9 @@ html {
 body {
   color: var(--text-color);
   background-color: var(--bg-color);
+}
+
+section {
+  min-height: 100vh;
+  min-width: 100%;
 }
